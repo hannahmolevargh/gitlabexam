@@ -1,0 +1,51 @@
+echo "1.Accept a file and print the file type"
+echo "2.Leap year or not"
+echo "3.compare two string"
+echo "enter the choice"
+read c
+case $c in
+1) echo "enther the file name:"
+   read f
+   if [ -d  $f ]
+   then
+   echo "Directory File"
+   elif [ -c  $f ]
+   then
+   echo "Charater text File"
+   elif [ -b  $f ]
+   then
+   echo "block linux File"
+   elif [ -L  $f ]
+   then
+   echo "Symbolic File"
+   else
+   echo "Regular file"
+  fi
+ ;;
+2) echo "enter the year:"
+   read y
+   if [ $((y%4)) -eq 0 ]
+   then
+   echo "$y is a leap year"
+   else
+   echo "$y is not a leap year"
+   fi
+ ;;
+
+3) echo "enter the first string:"
+   read str1
+   echo "enter the second string"
+   read str2
+   if [ "$str1" = "$str2" ]
+   then
+   echo "Two strings are same"
+   else 
+   echo "Two strings are not same"
+   fi
+  ;;
+
+*) echo "Invalid choice!!!!"
+;;
+esac
+
+
